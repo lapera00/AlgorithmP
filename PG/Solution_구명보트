@@ -1,0 +1,20 @@
+import java.util.*;
+
+class Solution {
+    public int solution(int[] people, int limit) {
+        int answer = 0;
+        
+        Arrays.sort(people);
+
+        int now = 0;
+
+        for (int max = people.length - 1; now <= max; max--){
+            if (people[now] + people[max] <= limit) {
+                now++;
+            }
+            answer++;
+        }
+        
+        return answer;
+    }
+}
